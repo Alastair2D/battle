@@ -1,9 +1,11 @@
-
-<%= @p1%> : <%= @player_one_points %>   <br>  
-<%= @p2%> : <%= @player_two_points %> 
-
+<%= @p1%> Hit Points : <%= @player_one_points %>   <br>  
+<%= @p2%> Hit Points : <%= @player_two_points %> 
 <br>
 <br>
-
-<a href="/attack">ATTACK</a>
-
+<form action="/attack_p1" method="post">
+      <input type="submit" value="ATTACK PLAYER ONE">
+    </form>
+<%# <a href="/attack_p2">ATTACK PLAYER TWO</a> %>
+<form action="/attack_p2" method="post">
+      <input type="submit" value="ATTACK PLAYER TWO">
+    </form>

@@ -4,8 +4,6 @@ require './lib/player'
 class Battle < Sinatra::Base
     enable :sessions
 
-    $p1 = 'John'
-
 
   get '/' do
    erb(:index)
@@ -31,13 +29,18 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/attack' do
-    # @player_two_points.to_i - 10
+  post '/attack_p2' do
     # @p1 = session[:player_one]
     # @p2 = session[:player_two]
     @p1 = $p1.name
     @p2 = $p2.name
-    erb(:attack)
+    erb(:attack_p2)
+  end
+
+  post '/attack_p1' do 
+    @p1 = $p1.name
+    @p2 = $p2.name
+    erb(:attack_p1)
   end
 
 

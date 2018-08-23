@@ -16,8 +16,14 @@ feature "Battle Features" do
 
   scenario 'allows player 1 to attack player 2' do
     sign_in_and_play
-    click_link('ATTACK')
+    click_button('ATTACK PLAYER TWO')
     expect(page).to have_content('John attacked Paul')
   end
+
+  # scenario 'attack reduces player 2 hit points by 10' do 
+  #   sign_in_and_play
+  #   click_button('ATTACK PLAYER TWO')
+  #   expect { $p1.attack }.to change { @player_two_points }.by -10
+  # end
 
 end
