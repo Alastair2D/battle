@@ -12,18 +12,27 @@ class Battle < Sinatra::Base
   post '/names' do
     $p1 = Player.new(params[:player_one])
     $p2 = Player.new(params[:player_two])
-    redirect '/play'
+    $game = Game.new($p1, $p2)
+    redirect '/coin_toss'
   end
 
-  get '/play' do 
+  get '/play' do
     erb(:play)
   end
 
-  post '/attack' do 
-    Game.new.attack($p2)
-    erb :attack
+  post '/attack' do
+    $game.attack
+    redirect '/play'
   end
 
+  get '/coin_toss' do
+    erb(:coin_toss)
+  end
+
+  post '/first_mover' do
+    $game.first_mover
+    redirect '/play'
+  end
 
   run! if app_file == $0
 

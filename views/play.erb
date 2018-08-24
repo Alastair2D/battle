@@ -1,7 +1,20 @@
-<%= $p1.name%> Hit Points : <%= $p1.hp %>   <br>  
-<%= $p2.name%> Hit Points : <%= $p2.hp %> 
+<h1>Battle in the Browser</h1>
+
+<%= $p1.name%> Hit Points : <%= $p1.hp %>   <br>
+<%= $p2.name%> Hit Points : <%= $p2.hp %>
 <br>
 <br>
 <form action="/attack" method="post">
       <input type="submit" value="ATTACK OPPONENT">
-    </form>
+</form>
+
+<p><%= $game.current_player.name %> it is your turn...</p>
+    <%= $p1.name%> <% $game.current_player.name %> attacked <%= $p2.name%>
+    <br>
+    <br>
+    Player two has been hit!
+    <br>
+    <br>
+    <%= $p1.name%> : <%= $p1.hp %>
+    <br>
+    <%= $p2.name%> : <%= $p2.hp %>
