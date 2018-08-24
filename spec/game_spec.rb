@@ -7,7 +7,7 @@ let(:player_two) { double :player_two }
 
   describe '#attack' do
     it 'damages opponent' do 
-      expect(:player_two).to receive(:attack)
+      expect(player_two).to receive(:receive_damage)
       game.attack(player_two)
     end
   end

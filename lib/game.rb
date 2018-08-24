@@ -4,8 +4,5 @@ class Game
     player.receive_damage
   end
 
-  def receive_damage
-    @hp -= 10
-  end
-  
+
 end
