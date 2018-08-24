@@ -14,13 +14,6 @@ let(:george) { Player.new('George') }
     end
   end
 
-  describe '#attack' do 
-    it 'damages the player' do 
-      expect(ringo).to receive(:receive_damage)
-      george.attack(ringo)
-    end
-  end
-
   describe '#receive_damage' do 
     it 'reduces the player hit points' do 
       expect { george.receive_damage }.to change { george.hp }.by(-10)

@@ -7,5 +7,9 @@ class Player
     @hp = hit_points
   end
 
+  def receive_damage
+    @hp -= 10
+  end
+
 
 end
