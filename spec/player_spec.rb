@@ -10,4 +10,20 @@ subject(:player) { Player.new('test') }
     end
   end
 
+  describe '#attack' do
+    it 'subtracts 10 from hp' do
+      p1 = Player.new('Al')
+      subject.attack(p1)
+      expect(p1.hp).to eq 40
+    end
+  end
+
 end
+
+  # describe '#attack' do
+  #   it 'subtracts 10 from hp' do
+  #     Alastair = Player.new('Al')
+  #     subject.attack('Al')
+  #     expect(subject.hp).to eq 40
+  #   end
+  # end
