@@ -24,7 +24,7 @@ class Battle < Sinatra::Base
 
    post '/p2_attacks' do
     session[:p1_hp] -= 10 
-    session[:message] = "P2's attack caused 10 damage"
+    session[:message] = "P2's attack totally 10'd you"
     redirect '/play'
   end
 
