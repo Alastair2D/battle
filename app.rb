@@ -39,8 +39,6 @@ class Battle < Sinatra::Base
 
 end
 
-
-
   # get '/coin_toss' do
   #   erb(:coin_toss)
   # end
