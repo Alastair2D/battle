@@ -12,7 +12,7 @@ class Game
   end
 
   def first_mover
-    rand(0..1) == 1 ? @current_player = @player1 : @current_player = $p2.name
+    rand(0..1) == 1 ? @current_player = @player1 : @current_player = $player2
   end
 
 end
