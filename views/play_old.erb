@@ -1,0 +1,38 @@
+<h1>Battle in the Browser</h1><br>
+
+This game is being played between <%= session[:name1] %> and <%= session[:name2] %> <br>
+
+Player 1: <%= session[:name1] %><br>
+Player 2: <%= session[:name2] %><br>
+
+<%= $p1.name%> Hit Points : <%= $p1.hp %>   <br>
+<%= $p2.name%> Hit Points : <%= $p2.hp %>   <br>
+<br><br>
+
+<%= session[:name1] %> score <%= session[:name1HP] %>
+<form action="/scores" method="post" >
+  <input type="text" name="name1HP">
+  <input type="submit" value="Attack">
+</form>
+
+<br>
+<br>
+<%= session[:name2] %> score <%= session[:name2HP] %>
+<form action="/scores" method="post" >
+  <input type="text" name="name2HP">
+  <input type="submit" value="Attack">
+</form>
+
+
+
+It is your move <%= @current_player %>
+<br>
+
+<form action="/attack" method="post">
+      <input type="submit" value="ATTACK OPPONENT">
+</form><br>
+
+<%= @current_player %> attacked <%= !@current_player%>
+<br>
+<%= !@current_player %> has been hit!
+<br>

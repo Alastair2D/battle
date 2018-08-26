@@ -1,18 +1,15 @@
-<h1>Battle in the Browser</h1>
+<h1>Player 1: <%= @p1 %></h1>
+<h2>Hitpoints: <%= @hp1 %></h2>
 
-<%= $p1.name%> Hit Points : <%= $p1.hp %>   <br>
-<%= $p2.name%> Hit Points : <%= $p2.hp %>
-<br>
-<br>
-<p><%= @current_player %> it is your turn...</p>
-<br>
-<form action="/attack" method="post">
-      <input type="submit" value="ATTACK OPPONENT">
+<form action="/p1_attacks" method="post">
+  <input type="submit" value="Attack P2">
 </form>
 
+<h1>Player 2: <%= @p2 %></h1>
+<h2>Hitpoints: <%= @hp2 %></h2>
 
-<%= $p1.name%> <% @current_player %> attacked <%= $p2.name%>
-<br>
-Player two has been hit!
-<br>
-<br>
+<form action="/p2_attacks" method="post">
+  <input type="submit" value="Attack P1">
+</form>
+
+<h1><%= @message %></h1>

@@ -10,27 +10,36 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $p1 = Player.new(params[:player_one])
-    $p2 = Player.new(params[:player_two])
-    $game = Game.new($p1, $p2)
-    redirect '/coin_toss'
+    session[:p1] = params[:player_one]   # session[:p1], session[:p2] = params[:p1_name], params[:p2_name]
+    session[:p2] = params[:player_two]   
+    session[:p1_hp], session[:p2_hp] = 100, 100
+    redirect to '/play'
   end
 
-  get '/play' do
-    $game.first_mover
-    erb(:play)
-  end
-
-  post '/attack' do
-    $game.attack
+  post '/p1_attacks' do
+    session[:p2_hp] -= 10 
+    session[:message] = "P1's attack caused 10 damage"
     redirect '/play'
   end
 
-  get '/coin_toss' do
-    erb(:coin_toss)
+   post '/p2_attacks' do
+    session[:p1_hp] -= 10 
+    session[:message] = "P2's attack caused 10 damage"
+    redirect '/play'
   end
 
-  # post '/first_mover' do
+  get '/play' do
+    @p1, @p2 = session[:p1], session[:p2]
+    @hp1, @hp2 = session[:p1_hp], session[:p2_hp]
+    @message = session[:message]
+    erb(:play)
+  end
+
+  # get '/coin_toss' do
+  #   erb(:coin_toss)
+  # end
+
+  # get '/first_mover' do 
   #   $game.first_mover
   #   redirect '/play'
   # end
@@ -38,3 +47,10 @@ class Battle < Sinatra::Base
   run! if app_file == $0
 
 end
+
+
+  # post '/scores' do 
+  #   session[:p1] = params[:player_one]
+  #   session[:p2] = params[:player_two]
+  #   redirect to '/play'
+  # end
