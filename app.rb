@@ -17,6 +17,7 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
+    $game.first_mover
     erb(:play)
   end
 
@@ -29,10 +30,10 @@ class Battle < Sinatra::Base
     erb(:coin_toss)
   end
 
-  post '/first_mover' do
-    $game.first_mover
-    redirect '/play'
-  end
+  # post '/first_mover' do
+  #   $game.first_mover
+  #   redirect '/play'
+  # end
 
   run! if app_file == $0
 
