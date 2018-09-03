@@ -1,4 +1,4 @@
- # battle 
+ # Battle 
 
 Basic <br>
 -----

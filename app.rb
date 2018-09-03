@@ -13,7 +13,11 @@ class Battle < Sinatra::Base
     session[:p1] = params[:player_one]   # session[:p1], session[:p2] = params[:p1_name], params[:p2_name]
     session[:p2] = params[:player_two]   
     session[:p1_hp], session[:p2_hp] = 100, 100
-    redirect to '/play'
+    redirect to '/coin_toss'
+  end
+
+  get '/coin_toss' do
+    erb(:coin_toss)
   end
 
   post '/p1_attacks' do
@@ -38,10 +42,6 @@ class Battle < Sinatra::Base
   run! if app_file == $0
 
 end
-
-  # get '/coin_toss' do
-  #   erb(:coin_toss)
-  # end
 
   # get '/first_mover' do 
   #   $game.first_mover
