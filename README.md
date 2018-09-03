@@ -1,7 +1,5 @@
  # Battle 
 
- ![Model View Controller (MVC) - Three tier Web Architecture](https://github.com/Alastair2D/battle/blob/master/images/mvc_diagram.png)
-
 User Stories <br>
 -----------
 As two Players, So we can play a personalised game of Battle, We want to Start a fight by entering our Names and seeing them
@@ -21,6 +19,9 @@ As Player 1, So I can lose a game of Battle, I want Player 2 to attack me, and I
 As Player 1, So I can start to lose a game of Battle, I want Player 2's attack to reduce my HP by 10
 
 As a Player, So I can Lose a game of Battle, I want to see a 'Lose' message if I reach 0HP first
+
+
+ ![Model View Controller (MVC) - Three tier Web Architecture](https://github.com/Alastair2D/battle/blob/master/images/mvc_diagram.png)
 
 Advanced <br>
 --------
