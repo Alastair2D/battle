@@ -1,6 +1,6 @@
  # Battle 
  
-User Stories <br>
+User Stories
 -----------
 As two Players, So we can play a personalised game of Battle, We want to Start a fight by entering our Names and seeing them
 
@@ -23,7 +23,7 @@ As a Player, So I can Lose a game of Battle, I want to see a 'Lose' message if I
 
  ![Model View Controller (MVC) - Three tier Web Architecture](https://github.com/Alastair2D/battle/blob/master/images/mvc_diagram.png)
 
-Advanced <br>
+Advanced
 --------
 As a Player, So I can play a suspenseful game of Battle, I want all Attacks to deal a random amount of damage
 
